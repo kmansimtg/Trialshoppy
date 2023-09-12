@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:assignment1/login_screens/login.dart';
 
 
 class Splash1 extends StatelessWidget {
@@ -9,9 +9,8 @@ class Splash1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-     
-      home: SplashScreen(),
+      title: 'Onboarding',
+     home: SplashScreen(),
     );
   }
 }
@@ -43,11 +42,11 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Column(
               children: [
-               
+                //LOGO AT THE TOP
                 Image.asset(
                   "assets/img.jpg",
-                  height: 300.0,
-                  width: 300.0,
+                  height: 350.0,
+                  width: 350.0,
                 ),
                  const Text(
                   "TRIPHOPPER",
@@ -55,37 +54,37 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
+                    fontSize: 18.0,
                   ),
                 ),
-                 Container( width: 300.0,
+                 Container( width: 400.0,
                   alignment: Alignment.topCenter,
                   padding: const EdgeInsets.all(18),
                   child: const Text(  textAlign: TextAlign.center,
-                    'Seamless journeys at your fingertips!                           Experience the future of transportation  with our revolutionary ride app.',
-                    style: TextStyle(fontSize: 12,color: Color(0xff667085)),
+                  //TEXT PART
+                    'Seamless journeys at your fingertips!\nExperience the future of transportation with\n our revolutionary ride app.',
+                    style: TextStyle(fontSize: 15,color: Color(0xff667085)),
                   )),
-SizedBox(height: 20,),
-                SizedBox(width: 280,
+                SizedBox(height: 50,),
+                SizedBox(width: 300,
                   child: TextButton(
                     style: TextButton.styleFrom(
-                        // foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(7),
                         ),
                         backgroundColor: Color(0xffF19305)),
                 
                     // ignore: prefer_const_constructors
-                    onPressed: () {},
-                      
+                  onPressed: ()  {},
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10, horizontal: 34),
                       child: const Text(
+                        //CREATE MY ACCOUNT BUTTON 
                         "Create My Account",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 15,
                             fontWeight: FontWeight.w400),
                       ),
                     ),
@@ -94,14 +93,18 @@ SizedBox(height: 20,),
                 ), SizedBox(
                       height: 5,
                     ),
+                  //ON CLICKING I ALREADY HAVE AN ACCOUNT BUTTON WE ARE DIRECTED TO LOGIN PAGE USING ROUTING-----
                     Container(
                         alignment: Alignment.center,
                         padding: const EdgeInsets.all(10),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => login()),
+                        );},
                           child: const Text(
-                            ' I already have an account',
-                            style: TextStyle(fontSize: 10,color: Color(0xffF19305),fontWeight: FontWeight.w100),
+                            'I already have an account',
+                            style: TextStyle(fontSize: 15,color: Color(0xffF19305),fontWeight: FontWeight.w500),
                           ),
                         )),
               ],
