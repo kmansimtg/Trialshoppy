@@ -1,3 +1,4 @@
+![WhatsApp Image 2023-09-12 at 10 03 33 PM](https://github.com/kmansimtg/Trialshoppy/assets/106241329/96cd67f3-b313-415b-8c98-c4c231e293f5)
 # assignment1
 
 A new Flutter project.
